@@ -1,5 +1,5 @@
 var screen = require('electron').screen;
-var native = require('./build/Release/addon');
+var native = require('./build/Release/addon.node');
 
 /**
  * @param {BrowserWindow} browserWindow                  - reference to the browser window the OSK
