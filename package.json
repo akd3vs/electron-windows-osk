@@ -6,13 +6,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "nan": "2.11.0",
-    "node-gyp": "3.8.0"
   },
   "scripts": {
-    "compile": "node-gyp rebuild",
-    "start": "node main.js",
-    "reconfigure": "node-gyp configure rebuild --nodedir=\"C:\\node-6.10.2\\node-6.10.2\" --debug"
-  },
-  "gypfile": true
+  }
 }
