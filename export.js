@@ -9,10 +9,11 @@ var native = require('./build/Release/addon.node');
  *                                                         percentage
  * @constructor
  */
-function OSK(browserWindow, menuPresent, keyboardHeightScreenPercentage) {
+function OSK(browserWindow, menuPresent, keyboardHeightScreenPercentage, keyboardWidthScreenPercentage) {
     this.browserWindow = browserWindow;
     this.menuPresent = menuPresent;
     this.keyboardHeightScreenPercentage = keyboardHeightScreenPercentage || 30;
+    this.keyboardWidthScreenPercentage = keyboardWidthScreenPercentage || 70;
 }
 
 /**
@@ -123,7 +124,10 @@ OSK.prototype.showFromEvent = function(inBrowserYOffset, height, padding) {
     }
 
     // OSK will be as wide as possible by default.
-    var oskWidth = display.workAreaSize.width;
+    // var oskWidth = display.workAreaSize.width;
+    var oskWidth = Math.floor(
+        (display.workAreaSize.width * this.keyboardWidthScreenPercentage) / 100
+    );
 
     return this.show(0, top, oskWidth, oskHeight);
 };
