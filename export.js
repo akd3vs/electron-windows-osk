@@ -9,10 +9,11 @@ var native;
  *                                                         percentage
  * @constructor
  */
-function OSK(browserWindow, menuPresent, keyboardHeightScreenPercentage) {
+function OSK(browserWindow, menuPresent, keyboardHeightScreenPercentage, keyboardWidthScreenPercentage) {
     this.browserWindow = browserWindow;
     this.menuPresent = menuPresent;
     this.keyboardHeightScreenPercentage = keyboardHeightScreenPercentage || 30;
+    this.keyboardWidthScreenPercentage = keyboardWidthScreenPercentage || 70;
 }
 
 /**
