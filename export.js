@@ -117,10 +117,16 @@ OSK.prototype.showFromEvent = function(inBrowserYOffset, height, padding) {
     );
 
     // If the keyboard would go out of screen we need to position it above the element.
-    if (oskHeight + top + height + padding > display.workAreaSize.height) {
-        top -= padding + oskHeight - system.borderThickness;
+    // if (oskHeight + top + height + padding > display.workAreaSize.height) {
+    if (oskHeight + top + height > display.workAreaSize.height) {
+        // top -= padding + oskHeight - system.borderThickness;
+        var newPadding = Math.floor(
+            height / 2
+        );
+        top -= newPadding + oskHeight - system.borderThickness;
     } else {
-        top += height + padding;
+        // top += height + padding;
+        top += height;
     }
 
     // OSK will be as wide as possible by default.
