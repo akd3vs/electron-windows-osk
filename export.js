@@ -129,7 +129,11 @@ OSK.prototype.showFromEvent = function(inBrowserYOffset, height, padding) {
         (display.workAreaSize.width * this.keyboardWidthScreenPercentage) / 100
     );
 
-    return this.show(0, top, oskWidth, oskHeight);
+    var xOffset = Math.floor(
+        (display.workAreaSize.width * (100 - this.keyboardWidthScreenPercentage)) / 200
+    );
+
+    return this.show(xOffset, top, oskWidth, oskHeight);
 };
 
 module.exports = OSK;
