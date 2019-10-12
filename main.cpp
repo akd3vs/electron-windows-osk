@@ -506,19 +506,19 @@ NAN_METHOD(OSKSetPosition) {
 	Nan::HandleScope scope;
 	try {
 		if (!info[0]->IsUndefined()) {
-			unsigned int left = info[0]->Uint32Value();
+			unsigned int left = Nan::To<v8::Uint32>(info[0]).ToLocalChecked()->Value();
 			setRegistryValue("WindowLeft", left);
 		}
 		if (!info[1]->IsUndefined()) {
-			unsigned int top = info[1]->Uint32Value();
+			unsigned int top = Nan::To<v8::Uint32>(info[1]).ToLocalChecked()->Value();
 			setRegistryValue("WindowTop", top);
 		}
 		if (!info[2]->IsUndefined()) {
-			unsigned int width = info[2]->Uint32Value();
+			unsigned int width = Nan::To<v8::Uint32>(info[2]).ToLocalChecked()->Value();
 			setRegistryValue("WindowWidth", width);
 		}
 		if (!info[3]->IsUndefined()) {
-			unsigned int height = info[3]->Uint32Value();
+			unsigned int height = Nan::To<v8::Uint32>(info[3]).ToLocalChecked()->Value();
 			setRegistryValue("WindowHeight", height);
 		}
 		info.GetReturnValue().Set(Nan::True());

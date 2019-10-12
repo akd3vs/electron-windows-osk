@@ -1,3 +1,5 @@
+## TODO: study tabtip.exe, which may be a better solution than osk.exe
+
 ## Electron Windows OSK
 ###### Windows on-screen keyboard manager for Electron apps.
 
