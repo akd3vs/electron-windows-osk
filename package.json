@@ -10,7 +10,7 @@
     "node-gyp": "6.0.0"
   },
   "scripts": {
-    "compile": "node-gyp rebuild",
+    "compile": "node-gyp rebuild --target=v12.4.0",
     "start": "node main.js",
     "reconfigure": "node-gyp configure rebuild --nodedir=\"C:\\node-6.10.2\\node-6.10.2\" --debug"
   },
